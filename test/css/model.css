@@ -1,0 +1,57 @@
+@charset 'utf-8';
+.m-banner {
+	background-color: #e5e5e5;
+	border-bottom: 1px #ccc solid;
+	padding:0.3em 1.5em;
+}
+.m-pBox {
+	text-indent: 2em;
+	line-height: 2em;
+	margin: .3em 1em;
+}
+.m-pa10{
+	padding: 1em;
+}
+.m-ma10{
+	margin: 1em;
+}
+.m-ma20 {
+	margin:2em;
+}
+.m-btn{
+	width: 2em;
+	height: 2em;
+	text-align: center;
+	line-height: 2em;
+	display: inline-block;
+	border-radius: 2px;
+	background-color: #ccc;
+	color:#fff;
+	cursor: pointer;
+}
+.m-btn:hover {
+	background-color: #6FD3F1
+}
+.m-table {
+	margin:0 auto;
+	text-align: center;
+}
+.m-td {
+	line-height: 2em;
+	padding: .3em;
+	border:1px #ccc solid;
+}
+
+.m-fill {
+	display: inline-block;
+	position: relative;
+	top:.2em;
+	width: 7em;
+	height: 2em;
+	margin-left: .3em;
+	margin-right: 1em;
+	border-bottom: #222 1px solid;
+	text-align: center;
+	text-indent: 0;
+}
+
