@@ -3,81 +3,109 @@
 <head>
 	<meta charset="UTF-8">
 	<title>test</title>
+	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="stylesheet" type="text/css" href="css/model.css">
 	<link rel="stylesheet" type="text/css" href="css/function.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/fonts.css">
+	
 	<script type="text/javascript" src='js/answer.json'></script>
 </head>
 <body>
-<div class="page">
-	<div class="m-banner f-cb ">
-		<div class="b-title f-fl ">
-			<i class='glyphicon glyphicon-arrow-left f-fs2 f-csp'></i>
-			<i class='glyphicon glyphicon-send f-fs2 f-cs p'></i>
-		</div>
-		<div class="b-btn f-fr">
-			<input type="submit" value="交卷" class="f-csp complete" />
-			<input type="submit" value="清空" class="f-csp clear"/>
-		</div>
-	</div>
-	<div class="article">
-		<div class="a-con" ng-controller="mycontrol">
-			<h5 class="m-ma10"><i class="glyphicon glyphicon-book"></i>&nbsp;&nbsp;点击空格处，选择恰当的单词</h5>
-			<div class="a-c-text">
-				<p class="m-pBox f-fs2 ">
-					It's the first question parents ask when their child is diagnosed with autism (自闭症). Will his future brothers or sisters have a higher risk of 1 <span class='select m-fill f-csp'></span>it, too? According to the largest study of siblings (兄弟姐妹) in families with autism, the answer is yes. Among 664 children who had at least one older sibling with the developmental disorder, the 2<span class='select m-fill f-csp'></span>risk of autism was nearly 19%, 3<span class='select m-fill f-csp'></span>higher than previous sibling-recurrence estimates that were anywhere from 3% to 10%. Kids with more than one older autistic sibling had an even higher risk of the disorder: 32%. 
-					The 4<span class='select m-fill f-csp'></span>suggest that genes play a key role in autism risk. But they also hint that other environmental factors 5<span class='select m-fill f-csp'></span>by siblings, like influences in the womb (子宫), may be important as well. 
-					On the 6<span class='select m-fill f-csp'></span>of the findings, the researchers recommend that doctors closely 7<span class='select m-fill f-csp'></span>younger siblings of autistic children to pick up any early signs of the disorder, 8<span class='select m-fill f-csp'></span>an unusually large head or delayed language development and communication skills. Evidence suggests that early 9<span class='select m-fill f-csp'></span> and diagnosis of autism can help children take advantage of therapies that can treat some of its 10<span class='select m-fill f-csp'></span>
-	            </p>
+	<div class="page f-ff1">
+		<div class="m-banner f-cb ">
+			<div class="b-title f-fl ">
+				<i class='glyphicon glyphicon-arrow-left f-fs2 f-csp'></i>
+				<i class='glyphicon glyphicon-send f-fs2 f-cs p'></i>
+			</div>
+			<div class="b-btn f-fr">
+				<input type="submit" value="交卷" class="f-csp complete" />
+				<input type="submit" value="清空" class="f-csp clear"/>
 			</div>
 		</div>
-		<div class="a-answer f-pab">
-			<img src="images/drag.png" class="f-db f-mau f-csp">
-			<div class="a-as-btns f-tac m-pa10 f-pr f-pab">
+		<div class="article">
+			<div class="a-con" ng-controller="mycontrol">
+				<h5 class="m-ma10"><i class="glyphicon glyphicon-book"></i>&nbsp;&nbsp;点击空格处，选择恰当的单词</h5>
+				<div class="a-c-text">
+					<p class="m-pBox f-fs2 ">
+						It's the first question parents ask when their child is diagnosed with autism (自闭症). Will his future brothers or sisters have a higher risk of 1 <span class='select m-fill f-csp'></span>it, too? According to the largest study of siblings (兄弟姐妹) in families with autism, the answer is yes. Among 664 children who had at least one older sibling with the developmental disorder, the 2<span class='select m-fill f-csp'></span>risk of autism was nearly 19%, 3<span class='select m-fill f-csp'></span>higher than previous sibling-recurrence estimates that were anywhere from 3% to 10%. Kids with more than one older autistic sibling had an even higher risk of the disorder: 32%. 
+						The 4<span class='select m-fill f-csp'></span>suggest that genes play a key role in autism risk. But they also hint that other environmental factors 5<span class='select m-fill f-csp'></span>by siblings, like influences in the womb (子宫), may be important as well. 
+						On the 6<span class='select m-fill f-csp'></span>of the findings, the researchers recommend that doctors closely 7<span class='select m-fill f-csp'></span>younger siblings of autistic children to pick up any early signs of the disorder, 8<span class='select m-fill f-csp'></span>an unusually large head or delayed language development and communication skills. Evidence suggests that early 9<span class='select m-fill f-csp'></span> and diagnosis of autism can help children take advantage of therapies that can treat some of its 10<span class='select m-fill f-csp'></span>
+		            </p>
+				</div>
+			</div>
+			<div class="a-answer f-pab">
+				<img src="images/drag.png" class="f-db f-mau f-csp">
+				<div class="a-as-btns f-tac m-pa10 f-pr f-pab">
+					
+					<span class='m-btn'>1<img class='selected' src="images/selected.png"></span>
+					<span class='m-btn'>2<img class='selected' src="images/selected.png"></span>
+					<span class='m-btn'>3<img class='selected' src="images/selected.png"></span>
+					<span class='m-btn'>4<img class='selected' src="images/selected.png"></span>
+					<span class='m-btn'>5<img class='selected' src="images/selected.png"></span>
+					<span class='m-btn'>6<img class='selected' src="images/selected.png"></span>
+					<span class='m-btn'>7<img class='selected' src="images/selected.png"></span>
+					<span class='m-btn'>8<img class='selected' src="images/selected.png"></span>
+					<span class='m-btn'>9<img class='selected' src="images/selected.png"></span>
+					<span class='m-btn'>10<img class='selected' src="images/selected.png"></span>
 				
-				<span class='m-btn'>1<img class='selected' src="images/selected.png"></span>
-				<span class='m-btn'>2<img class='selected' src="images/selected.png"></span>
-				<span class='m-btn'>3<img class='selected' src="images/selected.png"></span>
-				<span class='m-btn'>4<img class='selected' src="images/selected.png"></span>
-				<span class='m-btn'>5<img class='selected' src="images/selected.png"></span>
-				<span class='m-btn'>6<img class='selected' src="images/selected.png"></span>
-				<span class='m-btn'>7<img class='selected' src="images/selected.png"></span>
-				<span class='m-btn'>8<img class='selected' src="images/selected.png"></span>
-				<span class='m-btn'>9<img class='selected' src="images/selected.png"></span>
-				<span class='m-btn'>10<img class='selected' src="images/selected.png"></span>
-			
+				</div>
+				<table class="a-as-options m-table" border='1'>
+					<tr>
+							<td class="m-td" id='item'></td>
+							<td class="m-td" id='item'></td>
+							<td class="m-td" id='item'></td>
+						</tr>
+						<tr>
+							<td class="m-td" id='item'></td>
+							<td class="m-td" id='item'></td>
+							<td class="m-td" id='item'></td>
+						</tr>
+						<tr>
+							<td class="m-td" id='item'></td>
+							<td class="m-td" id='item'></td>
+							<td class="m-td" id='item'></td>
+						</tr>
+						<tr>
+							<td class="m-td" id='item'></td>
+							<td class="m-td" id='item'></td>
+							<td class="m-td" id='item'></td>
+						</tr>
+						<tr>
+							<td class="m-td" id='item'></td>
+							<td class="m-td" id='item'></td>
+							<td class="m-td" id='item'></td>
+						</tr>
+				</table> 
 			</div>
-		<table class="a-as-options m-table" border='1'>
-			<tr>
-					<td class="m-td" id='item'></td>
-					<td class="m-td" id='item'></td>
-					<td class="m-td" id='item'></td>
-				</tr>
-				<tr>
-					<td class="m-td" id='item'></td>
-					<td class="m-td" id='item'></td>
-					<td class="m-td" id='item'></td>
-				</tr>
-				<tr>
-					<td class="m-td" id='item'></td>
-					<td class="m-td" id='item'></td>
-					<td class="m-td" id='item'></td>
-				</tr>
-				<tr>
-					<td class="m-td" id='item'></td>
-					<td class="m-td" id='item'></td>
-					<td class="m-td" id='item'></td>
-				</tr>
-				<tr>
-					<td class="m-td" id='item'></td>
-					<td class="m-td" id='item'></td>
-					<td class="m-td" id='item'></td>
-				</tr>
-		</table> 
 		</div>
 	</div>
+	<div class="result m-border f-ff1">
+		<div class="reScore">
+			<h2 class="f-tac m-ma20">正确率<span class="score"></span>%</h2>
+		</div>
+		<hr/>
+		<div class="reNum">
+			<ul class="reNumCon f-tac f-cb f-mau m-pa10">
+				<li class="f-list f-fl">1</li>
+				<li class="f-list f-fl">2</li>
+				<li class="f-list f-fl">3</li>
+				<li class="f-list f-fl">4</li>
+				<li class="f-list f-fl">5</li>
+				<li class="f-list f-fl">6</li>
+				<li class="f-list f-fl">7</li>
+				<li class="f-list f-fl">8</li>
+				<li class="f-list f-fl">9</li>
+				<li class="f-list f-fl">10</li>
+			</ul>
+		</div>
+		<hr/>
+		<div class="reBtn f-tac m-ma20">
+			<input type="button" class="reBtnDetila f-tac m-reBtn m-mar10 " value="查看解析">
+			<input type="button" class="reBtnBack f-tac m-reBtn " value="返回列表">
+		</div>
 	</div>
+	<div class="m-windowMask"></div>
 	<script type="text/javascript" src='js/jquery.js'></script>
 	<script type="text/javascript" src='js/index.js'></script>
 

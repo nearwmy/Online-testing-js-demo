@@ -124,41 +124,127 @@ $(function(){
 
 		//根据答案测试
 		function test(textObj,score,url){
+			var arr=[],obj={};
 					$.ajax({
-						url:url,
+						url:"js/anwser.json",
 						type:"post",
-						datatype:"json",
+						dataType:"json",
+						async:false,
 						success:function(data){
-							$.each(textObj,function(k,d){
-								var index=$(d).index()+1;
-								if(index=data.quesNum&&$(d).text()==data.answer){
-									score+=10;
-									return score;
-									console.log($(d).text());
+								for(var i=0;i<data.length;i++){
+									$.each(textObj,function(k,d){
+										var index=$(d).index()+1;
+											if(index==data[i].quesNum && $(d).text()==data[i].answer){
+											score+=10;
+											arr.push(index);
+											arr.push($(d).text());
+										}
+									})
 								}
-							})
+								arr.push(score);
 						},
 						error:function(data){
-							console.log("为取到数据");
+							console.log("未取到数据");
+							console.log(data);
 						}
+
 					})
+					return arr;
 				}
 
+		// 遮罩层函数调用兼容ie6
+		function windowMask(mask){
+			var isIE6 = $.browser.msie && $.browser.version == "6.0";
+			mask=$(mask);
+			function show(){
+				isIE6 && resize();
+				mask.show();
+			}
+			function hide() {
+				isIE6 && $(window).off("resize", calculateSize);
+				mask.hide();
+			}
+			function calculateSize() { 
+				var b = document.documentElement.clientHeight ? document.documentElement : document.body, 
+			    height = b.scrollHeight > b.clientHeight ? b.scrollHeight : b.clientHeight, 
+				width = b.scrollWidth > b.clientWidth ? b.scrollWidth : b.clientWidth; 
+
+				mask.css({height: height, width: width}); 
+			}
+			function resize() { 
+				calculateSize(); 
+				$(window).on("resize", calculateSize); 
+      		} 
+
+			return { 
+				show: show, 
+				hide: hide 
+			};
+
+
+		}
+
 		//测试成绩公布，提交按钮操作
-		function complete(overBtn,textObj,url){
-			var score=0;
+		windowMask($(".m-windowMask")).hide();
+		$('.result').css('display','none');
+
+		function resultShow(arr,textObj,result){
+			result.find("input[type='button']").click(function(){
+				
+				windowMask($(".m-windowMask")).hide();
+
+				result.css('display','none');
+
+				$.each(arr,function(name,value){
+					var c=value-1;
+					textObj.eq(c).addClass('correct');
+				})
+				$.each(textObj,function(k,value){
+					if(!$(k).hasClass('correct')){
+						$(k).append("<span class='textAnswer m-fill'></span>");
+					}
+				})
+			})
+			
+
+		}
+
+		function scoreShow(result,arr,b){ //有问题
+			result.find('li').addClass('error');
+
+			$.each(arr,function(k,value){
+				var c=value-1;
+				result.find('li').eq(c).removeClass('error').addClass('correct');
+
+			});
+			result.find('.score').text(b);
+
+			result.css('display','block');
+
+			windowMask($(".m-windowMask")).show();
+		}
+
+		function complete(overBtn,textObj,url,result){
+			var score=0,arr;
 			overBtn.click(function(){
 
-				if($('.disabled').length==textObj.length){
-					test(textObj);
-					alert('正确率'+score+'%');
+				if($('.disabled').length!=textObj.length){
+					//获取正确题目序号以及成绩 b变量表示成绩
+					arr=test(textObj,score,url),b=arr.pop();
+
+					scoreShow(result,arr,b);
+					resultShow(arr,textObj,result);
+
 					return false;
 				}else{
 					alert('题目还没有做完，亲！');
+
 					return false;
 				}
 			})
+			
 		}
+
 
 		//清除按钮操作
 		function clear(clearBtn,textObj){
@@ -173,12 +259,12 @@ $(function(){
 		}
 
 		//整个函数的入口，提供变量参数
-		function submit(textObj,overBtn,clearBtn,url,words,btnObj){
+		function submit(textObj,overBtn,clearBtn,url,words,btnObj,result){
 			active(textObj,btnObj,words);
 			clear(clearBtn,textObj);
-			complete(overBtn,textObj);
+			complete(overBtn,textObj, url, result);
 		}
 
-		submit($('.select'),$('.complete'),$('.clear'),"js/answer.js",$('.a-as-options td'),$('.a-as-btns span'));
+		submit($('.select'),$('.complete'),$('.clear'),"js/answer.json",$('.a-as-options td'),$('.a-as-btns span'),$('.result'));
 
 })

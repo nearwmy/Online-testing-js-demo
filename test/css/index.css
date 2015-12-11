@@ -1,4 +1,5 @@
 @charset 'utf-8';
+/* 容器类名 */
 .page {
 	width: 60%;
 	margin: 2em auto;
@@ -19,7 +20,36 @@
 .a-as-btns>span {
 	position: relative;
 }
+.a-as-options{
+	width: 90%;
+	border-color: #ccc;
+}
+.a-as-options td:hover {
+	color: #6FD3F1;
+}
 
+.result {
+	width:500px;
+	height:600px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-top: -300px;
+	margin-left: -250px;
+	background-color: #fff;
+	z-index: 101
+}
+.reNumCon{
+	width:80%;
+	margin:0;
+}
+.reNumCon li {
+	width:20%;
+	margin:1.5em 0;
+	background-color: #fff
+}
+
+/* 状态类名 */
 .selected {
 	display: inline-block;
 	position: absolute;
@@ -28,13 +58,6 @@
 }
 .select {
 	color: #fff
-}
-.a-as-options{
-	width: 90%;
-	border-color: #ccc;
-}
-.a-as-options td:hover {
-	color: #6FD3F1;
 }
 .active {
 	background-color: #6FD3F1;
@@ -50,4 +73,22 @@
 .activeBtn {
 	background-color: #6FD3F1 !important;
 
+}
+.correct {
+	color:#76D4C2
+}
+.error {
+	color:#FFA7BF
+}
+.textAnswer {
+	background-color:#76D4C2;
+	border-radius: .3em .3em 0 0;
+	border:0 !important;
+}
+.textErr{
+	background-color:#999;
+	text-decoration: through;
+	color: #f00;
+	border-radius: .3em .3em 0 0;
+	border:0 !important;
 }

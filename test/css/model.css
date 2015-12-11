@@ -18,6 +18,12 @@
 .m-ma20 {
 	margin:2em;
 }
+.m-mal10{
+	margin-left: 1em;
+}
+.m-mar10 {
+	margin-right: 1em;
+}
 .m-btn{
 	width: 2em;
 	height: 2em;
@@ -53,5 +59,30 @@
 	border-bottom: #222 1px solid;
 	text-align: center;
 	text-indent: 0;
+}
+
+.m-reBtn {
+	width:45%;
+	height:2.5em;
+	line-height: 2.5em;
+	border-radius: 5em;
+	border:1px #6AD2BD solid;
+	background-color: #fff
+}
+.m-reBtn:hover {
+	border:1px #6FD3F1 solid
+}
+.m-windowMask {
+	background-color: #000;
+	filter:alpha(opacity=20);
+	opacity:.2;
+	position:fixed;
+	*position:absolute;
+	left:0;
+	top:0;
+	height:100%;
+	width:100%;
+	overflow:hidden;
+	z-index: 100;
 }
 
